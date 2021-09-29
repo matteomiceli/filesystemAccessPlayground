@@ -1,4 +1,4 @@
-# Testing the filesystem access API
+# The Basics of the Filesystem Access API
 The broswer needs a directory entry point from:
 ```javascript
 dir = await window.showDirectoryPicker()
