@@ -25,4 +25,4 @@ Since we are dealing with a file now and not a directory, we'll asign this newly
     await stream.write(fileData)
     await stream.close() 
 ```
-To write to this newly created file, we must create a stream. We can then write some kind of data into the file. When we're done, close the stream. 
+To write to this newly created file, we create a stream. We can then write some kind of data into the file. When we're done, close the stream. 
