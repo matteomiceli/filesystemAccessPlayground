@@ -17,15 +17,15 @@ button.addEventListener('click', async () => {
     await dir.requestPermission({ mode : "readwrite" }) 
 
     // navigate through subdirectories with getDirectoryHandle
-    // dir = await dir.getDirectoryHandle('BCIT')
-    // dir = await dir.getDirectoryHandle('Level 1')
+    dir = await dir.getDirectoryHandle('.kobo')
+    dir = await dir.getDirectoryHandle('custom-dict')
     // dir = await dir.getDirectoryHandle('COMP 1171')
         .catch((e) => console.log(e))
 })
 
 // prints current live directory 
 prnt.addEventListener('click', () => {
-    console.log(dir);
+    console.log(dir)
 })
 
 // creates file if it doesn't exist in the current directory
