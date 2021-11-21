@@ -2,14 +2,16 @@ const button = document.querySelector('#btn')
 const prnt = document.querySelector('#prnt')
 const create = document.querySelector('#create')
 const write = document.querySelector('#write')
-const fileData = 'This is a test file'
+let fileData;
 
 // globals 
 let dir;
 let file;
 
 button.addEventListener('click', async () => {
-    // open OS directory picker, user chooses directory
+    // open OS directory picker, user chooses director
+    console.log('showOpenFilePicker' in window )
+
     dir = await window.showDirectoryPicker()
         .catch(e => console.log(e))
     
@@ -30,8 +32,10 @@ prnt.addEventListener('click', () => {
 
 // creates file if it doesn't exist in the current directory
 create.addEventListener('click', async () => {
-    file = await dir.getFileHandle('Test.txt', { create: true })
-    console.log(file)
+    [ handle ] = await window.showOpenFilePicker()
+    fileData = await handle.getFile();
+    file = await dir.getFileHandle('dict-cus.zip', { create: true })
+    console.log(fileData)
 })
 
 // writes contents of fielData variable to Test.txt on the user's filesystem
